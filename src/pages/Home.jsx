@@ -107,33 +107,6 @@ export const Home = () => {
 		}
 	}
 
-  const guardar = () => {
-    //Captura los datos de las cajas de texto
-    const nom = nombre.campo;
-    const apell = apellido.campo;
-    const nac = nacionalidad.campo;
-    const gen = genero.campo;
-    const doc = documento.campo;
-    const dir = direccion.campo;
-    const corr = correo.campo;
-    const cel = telefono.campo;
-    const cla = password.campo;
-
-    //Crea un objeto JSON, con los datos capturados
-    const usue = { nom, apell,nac, gen, doc, dir,corr, cel, cla};
-    //Obtiene los usuarios Externos guardados en Local Storage
-    listadoUsuarioe = JSON.parse(localStorage.getItem("listaUsuariose")) || [];
-    //Se adiciona el nuevo usuarios Externo al array
-    listadoUsuarioe.push(usue);
-    //Se guarda en local storage
-    localStorage.setItem("listaUsuariose", JSON.stringify(listadoUsuarioe));
-
-    
-    //Muestra mensaje de Guardado
-    setSucces(true);
-    //Oculta mensaje de Guardado
-    setTimeout(() => setSucces(false), 3000)
-};
   return (
     <Fragment>
       <div className="navbar navbar-inverse navbar-fixed-top">
