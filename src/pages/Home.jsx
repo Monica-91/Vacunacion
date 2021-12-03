@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import Input from './Input';
 export const Home = () => {
-  const [success, setSucces] = useState(false);
+
   //formulario
   //Array de Lista de usuarios Externos
   let listadoUsuarioe;
