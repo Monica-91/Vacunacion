@@ -1,15 +1,14 @@
 import logo from './faviconn.jpeg';
 import image from './header-bg.jpg';
 import './App.css';
-import { BrowserRouter as Router, Switch,Routes, Route, Link} from "react-router-dom";
+
 import { Navbar } from './pages/Navbar';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Services } from './pages/Services';
 import { Works } from './pages/Works';
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import { UsuarioseList } from './pages/UsuarioseList';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';;
 
 
 function App() {
@@ -19,16 +18,16 @@ function App() {
   return (
      
     <div className="App">
-      <Router>
+      <BrowserRouter>
       
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/services" element={<Services/>} />
           <Route path="/works" element={<Works/>}/>
+          <Route path="/lista" element={<UsuarioseList />}/>
         </Routes> 
-      
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }

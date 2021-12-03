@@ -1,26 +1,39 @@
-import React, { Fragment,useState} from 'react'
+import React, { Fragment,useState, useRef} from 'react'
 import {Link} from 'react-router-dom'
 import {Formulario, Label, ContenedorTerminos, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError} from './../elementos/Formularios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import Input from './Input';
 export const Home = () => {
-
+  const [success, setSucces] = useState(false);
   //formulario
-  const [usuario, cambiarUsuario] = useState({campo: '', valido: null});
-	const [nombre, cambiarNombre] = useState({campo: '', valido: null});
+  //Array de Lista de usuarios Externos
+  let listadoUsuarioe;
+  
+ 
+
+  const [nombre, cambiarNombre] = useState({campo: '', valido: null});
+	const [apellido, cambiarApellido] = useState({campo: '', valido: null});
 	const [password, cambiarPassword] = useState({campo: '', valido: null});
 	const [password2, cambiarPassword2] = useState({campo: '', valido: null});
 	const [correo, cambiarCorreo] = useState({campo: '', valido: null});
 	const [telefono, cambiarTelefono] = useState({campo: '', valido: null});
-	const [terminos, cambiarTerminos] = useState(false);
+  const [direccion, cambiarDireccion] = useState({campo: '', valido: null});
+	const [nacionalidad, cambiarNacionalidad] = useState({campo: '', valido: null});
+	const [genero, cambiarGenero] = useState({campo: '', valido: null});
+	const [documento, cambiarDocumento] = useState({campo: '', valido: null});
+  const [terminos, cambiarTerminos] = useState(false);
 	const [formularioValido, cambiarFormularioValido] = useState(null);
 
 	const expresiones = {
-		usuario: /^[a-zA-Z0-9_-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+		apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras, numeros, guion y guion_bajo
 		nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-		password: /^.{4,12}$/, // 4 a 12 digitos.
+		nacionalidad: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    genero: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    password: /^.{4,12}$/, // 4 a 12 digitos.
+    documento: /^.{4,12}$/, // 4 a 12 digitos.
 		correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    direccion: /^[a-zA-Z0-9_.+-]+$/,
 		telefono: /^\d{7,14}$/ // 7 a 14 numeros.
 	}
 
@@ -46,27 +59,81 @@ export const Home = () => {
 		e.preventDefault();
 
 		if(
-			usuario.valido === 'true' &&
 			nombre.valido === 'true' &&
-			password.valido === 'true' &&
-			password2.valido === 'true' &&
-			correo.valido === 'true' &&
-			telefono.valido === 'true' &&
+			apellido.valido == 'true' &&
+      nacionalidad.valido == 'true' &&
+      genero.valido == 'true' &&
+      documento.valido === 'true' &&
+      correo.valido === 'true' &&
+      telefono.valido === 'true' &&
+      password.valido === 'true' &&
 			terminos
 		){
+      //Captura los datos de las cajas de texto
+      const nom = nombre.campo;
+      const apell = apellido.campo;
+      const nac = nacionalidad.campo;
+      const gen = genero.campo;
+      const doc = documento.campo;
+      const dir = direccion.campo;
+      const corr = correo.campo;
+      const cel = telefono.campo;
+      const cla = password.campo;
+
+      //Crea un objeto JSON, con los datos capturados
+      const usue = { nom, apell,nac, gen, doc, dir,corr, cel, cla};
+      //Obtiene los usuarios Externos guardados en Local Storage
+      listadoUsuarioe = JSON.parse(localStorage.getItem("listaUsuariose")) || [];
+      //Se adiciona el nuevo usuarios Externo al array
+      listadoUsuarioe.push(usue);
+      //Se guarda en local storage
+      localStorage.setItem("listaUsuariose", JSON.stringify(listadoUsuarioe));
+      // Borrar los campos
 			cambiarFormularioValido(true);
-			cambiarUsuario({campo: '', valido: ''});
 			cambiarNombre({campo: '', valido: null});
+			cambiarApellido({campo: '', valido: null});
 			cambiarPassword({campo: '', valido: null});
-			cambiarPassword2({campo: '', valido: 'null'});
+			cambiarPassword2({campo: '', valido: null});
 			cambiarCorreo({campo: '', valido: null});
 			cambiarTelefono({campo: '', valido: null});
+      cambiarDireccion({campo: '', valido: null});
+      cambiarNacionalidad({campo: '', valido: null});
+      cambiarGenero({campo: '', valido: null});
+      cambiarDocumento({campo: '', valido: null});
 
 			// ... 
 		} else {
 			cambiarFormularioValido(false);
 		}
 	}
+
+  const guardar = () => {
+    //Captura los datos de las cajas de texto
+    const nom = nombre.campo;
+    const apell = apellido.campo;
+    const nac = nacionalidad.campo;
+    const gen = genero.campo;
+    const doc = documento.campo;
+    const dir = direccion.campo;
+    const corr = correo.campo;
+    const cel = telefono.campo;
+    const cla = password.campo;
+
+    //Crea un objeto JSON, con los datos capturados
+    const usue = { nom, apell,nac, gen, doc, dir,corr, cel, cla};
+    //Obtiene los usuarios Externos guardados en Local Storage
+    listadoUsuarioe = JSON.parse(localStorage.getItem("listaUsuariose")) || [];
+    //Se adiciona el nuevo usuarios Externo al array
+    listadoUsuarioe.push(usue);
+    //Se guarda en local storage
+    localStorage.setItem("listaUsuariose", JSON.stringify(listadoUsuarioe));
+
+    
+    //Muestra mensaje de Guardado
+    setSucces(true);
+    //Oculta mensaje de Guardado
+    setTimeout(() => setSucces(false), 3000)
+};
   return (
     <Fragment>
       <div className="navbar navbar-inverse navbar-fixed-top">
@@ -310,25 +377,26 @@ export const Home = () => {
       {/*  <!-- Formulario --> */}
       <main>
 			<Formulario action="" onSubmit={onSubmit}>
-				<Input
-					estado={usuario}
-					cambiarEstado={cambiarUsuario}
-					tipo="text"
-					label="Usuario"
-					placeholder="john123"
-					name="usuario"
-					leyendaError="El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo."
-					expresionRegular={expresiones.usuario}
-				/>
+				
 				<Input
 					estado={nombre}
 					cambiarEstado={cambiarNombre}
 					tipo="text"
 					label="Nombre"
-					placeholder="John Doe"
-					name="usuario"
+					placeholder=""
+					name="nombre"
 					leyendaError="El nombre solo puede contener letras y espacios."
 					expresionRegular={expresiones.nombre}
+				/>
+        <Input
+					estado={apellido}
+					cambiarEstado={cambiarApellido}
+					tipo="text"
+					label="Apellido"
+					placeholder=""
+					name="apellido"
+					leyendaError="El nombre solo puede contener letras y espacios."
+					expresionRegular={expresiones.apellido}
 				/>
 				<Input
 					estado={password}
@@ -363,12 +431,48 @@ export const Home = () => {
 					cambiarEstado={cambiarTelefono}
 					tipo="text"
 					label="Teléfono"
-					placeholder="4491234567"
+					placeholder=""
 					name="telefono"
 					leyendaError="El telefono solo puede contener numeros y el maximo son 14 dígitos."
 					expresionRegular={expresiones.telefono}
 				/>
-
+        <Input
+					estado={direccion}
+					cambiarEstado={cambiarDireccion}
+					tipo="text"
+					label="Direccion"
+					placeholder=""
+					name="direccion"
+				/>
+        <Input
+					estado={nacionalidad}
+					cambiarEstado={cambiarNacionalidad}
+					tipo="text"
+					label="Nacionalidad"
+					placeholder=""
+					name="nacionalidad"
+					leyendaError="La Nacionalidad solo puede contener letras y espacios."
+					expresionRegular={expresiones.nacionalidad}
+				/>
+        <Input
+					estado={genero}
+					cambiarEstado={cambiarGenero}
+					tipo="text"
+					label="Genero"
+					placeholder=""
+					name="genero"
+					leyendaError="El genero solo puede contener letras y espacios."
+					expresionRegular={expresiones.genero}
+          />
+         <Input
+					estado={documento}
+					cambiarEstado={cambiarDocumento}
+					tipo="text"
+					label="Documento"
+					name="documento"
+					leyendaError="el documento tiene que ser de 4 a 12 dígitos."
+					expresionRegular={expresiones.documento}
+				/>
 
 
 				<ContenedorTerminos>
@@ -383,7 +487,7 @@ export const Home = () => {
 						Acepto los Terminos y Condiciones
 					</Label>
 				</ContenedorTerminos>
-				{formularioValido === false && <MensajeError>
+				{formularioValido == false && <MensajeError>
 					<p>
 						<FontAwesomeIcon icon={faExclamationTriangle}/>
 						<b>Error:</b> Por favor rellena el formulario correctamente.
@@ -391,10 +495,11 @@ export const Home = () => {
 				</MensajeError>}
 				<ContenedorBotonCentrado>
 					<Boton type="submit">Enviar</Boton>
-					{formularioValido === true && <MensajeExito>Formulario enviado exitosamente!</MensajeExito>}
+          <Link to="/lista">Listar</Link>
+        {formularioValido == true && <MensajeExito>Formulario enviado exitosamente!</MensajeExito>}
 				</ContenedorBotonCentrado>
 			</Formulario>
-		</main>
+		</main> 
 	);
     
       {/*  <!-- JavaScript Libraries --> */}
@@ -405,7 +510,7 @@ export const Home = () => {
 
       {/*  <!-- Template Main Javascript File --> */}
       <script src="js/main.js"></script>
-    </Fragment>
+   </Fragment>
        
   )
 }

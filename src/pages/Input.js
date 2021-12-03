@@ -7,6 +7,8 @@ const ComponenteInput = ({estado, cambiarEstado, tipo, label, placeholder, name,
 		cambiarEstado({...estado, campo: e.target.value});
 	}
 
+
+
 	const validacion = () => {
 		if(expresionRegular){
 			if(expresionRegular.test(estado.campo)){
