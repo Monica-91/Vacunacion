@@ -15,6 +15,7 @@ jQuery(document).ready(function( $ ) {
 	};
 
 	if($('#canvas2').length) {
+		// eslint-disable-next-line no-redeclare
 		var doughnutData = [{
 				value: 90,
 				color: "#f85c37"
@@ -28,6 +29,7 @@ jQuery(document).ready(function( $ ) {
 	}
 
 	if($('#canvas3').length) {
+		// eslint-disable-next-line no-redeclare
 		var doughnutData = [{
 				value: 55,
 				color: "#f85c37"
@@ -41,6 +43,7 @@ jQuery(document).ready(function( $ ) {
 	}
 
 	if($('#canvas4').length) {
+		// eslint-disable-next-line no-redeclare
 		var doughnutData = [{
 				value: 55,
 				color: "#f85c37"

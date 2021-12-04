@@ -13,15 +13,15 @@ export const Services = () => {
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        <Link className="navbar-brand" to="#">SP<i className="fa fa-circle"></i>T</Link> 
+                        <Link class="navbar-brand" to="/"><img src="https://www.imbanaco.com/wp-content/themes/imbanaco/assets/img/logo-imbanaco1.svg" alt="Logo-Embanaco"></img></Link>
                     </div>
                     <div className="navbar-collapse collapse">
                         <ul className="nav navbar-nav navbar-right">
-                            <li><Link to='/'> HOME </Link></li>
-                            <li><Link to='/about'> ABOUT </Link></li>                        
+                            <li><Link to='/' className="enlaces-navbar"> HOME </Link></li>
+                            <li><Link to='/about' className="enlaces-navbar"> ABOUT </Link></li>                        
                             <li className="active"><Link to='/services'> SERVICES </Link></li>
-                            <li><Link to='/works'> WORKS </Link></li>
-                            <li><Link data-toggle="modal" data-target="#myModal" to="#myModal"><i className="fa fa-envelope-o"></i></Link> </li>
+                            <li><Link to='/works' className="enlaces-navbar"> WORKS </Link></li>
+                            <li><Link data-toggle="modal" data-target="#myModal" to="#myModal"><i className="fa fa-envelope-o enlaces-navbar"></i></Link> </li>
                         </ul>
                     </div>
                     {/* <!--/.nav-collapse --> */} 
@@ -231,7 +231,7 @@ export const Services = () => {
                                 Somestreet Ave, 987<br/> London, UK.<br/> +44 8948-4343<br/> contact@example.com
                                 </p>
 
-                                <form className="contact-form php-mail-form" role="form" action="contactform/contactform.php" method="POST">
+                                <form className="contact-form php-mail-form" action="contactform/contactform.php" method="POST">
 
                                     <div className="form-group">
                                         <label for="contact-name">Your Name</label>

@@ -13,15 +13,15 @@ export const About = () => {
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        <a className="navbar-brand" href="#">SP<i className="fa fa-circle"></i>T</a>
+                        <Link class="navbar-brand" to="/"><img src="https://www.imbanaco.com/wp-content/themes/imbanaco/assets/img/logo-imbanaco1.svg" alt="Logo-Embanaco"></img></Link>
                     </div>
                     <div className="navbar-collapse collapse">
                         <ul className="nav navbar-nav navbar-right">
-                        <li><Link to='/'> HOME </Link></li>
+                        <li><Link to='/' className="enlaces-navbar"> HOME </Link></li>
                         <li className="active"><Link to='/about'> ABOUT </Link></li>                        
-                        <li><Link to='/services'> SERVICES </Link></li>
-                        <li><Link to='/works'> WORKS </Link></li>
-                        <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i className="fa fa-envelope-o"></i></a></li>
+                        <li><Link to='/services' className="enlaces-navbar"> SERVICES </Link></li>
+                        <li><Link to='/works' className="enlaces-navbar"> WORKS </Link></li>
+                        <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i className="fa fa-envelope-o enlaces-navbar"></i></a></li>
                         </ul>
                     </div>
                     {/*  <!--/.nav-collapse--> */}
@@ -49,7 +49,7 @@ export const About = () => {
                         <img className="img-circle" src="img/pic.jpg" width="110" height="110" alt=""/>
                         <h4>Frank Lampard</h4>
                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
-                        <p><a href="#">@Frank_BlackTie</a></p>
+                        <p><a href="/">@Frank_BlackTie</a></p>
                     </div>
                 {/*  <!-- col-lg-3--> */}
 
@@ -57,7 +57,7 @@ export const About = () => {
                         <img className="img-circle" src="img/pic2.jpg" width="110" height="110" alt=""/>
                         <h4>David Wright</h4>
                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
-                        <p><a href="#">@David_BlackTie</a></p>
+                        <p><a href="/">@David_BlackTie</a></p>
                     </div>
                 {/*  <!-- col-lg-3--> */}
 
@@ -65,7 +65,7 @@ export const About = () => {
                         <img className="img-circle" src="img/pic3.jpg" width="110" height="110" alt=""/>
                         <h4>Mark Milestone</h4>
                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
-                        <p><a href="#">@Mark_BlackTie</a></p>
+                        <p><a href="/">@Mark_BlackTie</a></p>
                     </div>
                 {/*  <!-- col-lg-3--> */}
 
@@ -73,7 +73,7 @@ export const About = () => {
                         <img className="img-circle" src="img/pic4.jpg" width="110" height="110" alt=""/>
                         <h4>Tania Tissen</h4>
                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
-                        <p><a href="#">@Tania_BlackTie</a></p>
+                        <p><a href="/">@Tania_BlackTie</a></p>
                     </div>
                 {/*  <!-- col-lg-3--> */}
 
@@ -150,7 +150,7 @@ export const About = () => {
             <div id="f">
                 <div className="container">
                     <div className="row centered">
-                        <a href="#"><i className="fa fa-twitter"></i></a><a href="#"><i className="fa fa-facebook"></i></a><a href="#"><i className="fa fa-dribbble"></i></a>
+                        <a href="/"><i className="fa fa-twitter"></i></a><a href="/"><i className="fa fa-facebook"></i></a><a href="/"><i className="fa fa-dribbble"></i></a>
 
                     </div>
                 {/*  <!-- row--> */}
@@ -175,7 +175,7 @@ export const About = () => {
                                 Somestreet Ave, 987<br/> London, UK.<br/> +44 8948-4343<br/> contact@example.com
                                 </p>
 
-                                <form className="contact-form php-mail-form" role="form" action="contactform/contactform.php" method="POST">
+                                <form className="contact-form php-mail-form" action="contactform/contactform.php" method="POST">
 
                                     <div className="form-group">
                                         <label for="contact-name">Your Name</label>

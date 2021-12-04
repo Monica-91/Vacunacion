@@ -83,9 +83,13 @@ a {
 }
 
 a:hover, a:focus {
-  color: #7b7b7b;
+  color:  #7b7b7b;
   text-decoration: none;
   outline: 0;
+}
+
+.enlaces-navbar:hover{
+  color: black !important;
 }
 
 a:before, a:after {
@@ -105,11 +109,15 @@ hr {
   font-weight: 800;
   font-size: 14px;
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
+}
+
+.navbar-header:before {
+  margin: -10px;
 }
 
 .navbar-inverse {
-  background: #2d2d2d;
+  background: #ffffff;
   border-color: #2d2d2d;
 }
 

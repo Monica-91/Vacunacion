@@ -13,15 +13,15 @@ export const Works = () => {
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                         </button>
-                        <a className="navbar-brand" href="#">SP<i className="fa fa-circle"></i>T</a>
+                        <Link class="navbar-brand" to="/"><img src="https://www.imbanaco.com/wp-content/themes/imbanaco/assets/img/logo-imbanaco1.svg" alt="Logo-Embanaco"></img></Link>
                     </div>
                     <div className="navbar-collapse collapse">
                         <ul className="nav navbar-nav navbar-right">
-                        <li><a href="index.html">HOME</a></li>
-                        <li><a href="about.html">ABOUT</a></li>
-                        <li><a href="services.html">SERVICES</a></li>
-                        <li className="active"><a href="works.html">WORKS</a></li>
-                        <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i className="fa fa-envelope-o"></i></a></li>
+                        <li><Link to='/' className="enlaces-navbar"> HOME </Link></li>
+                        <li><Link to='/about' className="enlaces-navbar"> ABOUT </Link></li>                        
+                        <li><Link to='/services' className="enlaces-navbar"> SERVICES </Link></li>
+                        <li className='active'><Link to='/about'> WORKS</Link></li>
+                        <li><a data-toggle="modal" data-target="/myModal" href="/myModal"><i className="fa fa-envelope-o enlaces-navbar"></i></a></li>
                         </ul>
                     </div>
                     {/* <!-- /.nav-collapse --> */}
@@ -57,7 +57,7 @@ export const Works = () => {
                         <i className="fa fa-circle-o"></i> Mobile Design<br/>
                         <i className="fa fa-circle-o"></i> Web Design<br/>
                         <i className="fa fa-circle-o"></i> Development<br/>
-                        <i className="fa fa-link"></i> <a href="#">Example.com</a>
+                        <i className="fa fa-link"></i> <a href="/">Example.com</a>
                         </p>
                     </div>
                 </div>
@@ -80,7 +80,7 @@ export const Works = () => {
                         <i className="fa fa-circle-o"></i> Mobile Design<br/>
                         <i className="fa fa-circle-o"></i> Web Design<br/>
                         <i className="fa fa-circle-o"></i> Development<br/>
-                        <i className="fa fa-link"></i> <a href="#">Example.com</a>
+                        <i className="fa fa-link"></i> <a href="/">Example.com</a>
                         </p>
                     </div>
                 </div>
@@ -102,7 +102,7 @@ export const Works = () => {
                         <i className="fa fa-circle-o"></i> Mobile Design<br/>
                         <i className="fa fa-circle-o"></i> Web Design<br/>
                         <i className="fa fa-circle-o"></i> Development<br/>
-                        <i className="fa fa-link"></i> <a href="#">Example.com</a>
+                        <i className="fa fa-link"></i> <a href="/">Example.com</a>
                         </p>
                     </div>
                 </div>
@@ -129,7 +129,7 @@ export const Works = () => {
             <div id="f">
                 <div className="container">
                     <div className="row centered">
-                        <a href="#"><i className="fa fa-twitter"></i></a><a href="#"><i className="fa fa-facebook"></i></a><a href="#"><i className="fa fa-dribbble"></i></a>
+                        <a href="/"><i className="fa fa-twitter"></i></a><a href="/"><i className="fa fa-facebook"></i></a><a href="/"><i className="fa fa-dribbble"></i></a>
 
                     </div>
                     {/* <!--  row --> */}
@@ -154,7 +154,7 @@ export const Works = () => {
                                 Somestreet Ave, 987<br/> London, UK.<br/> +44 8948-4343<br/> contact@example.com
                                 </p>
 
-                                <form className="contact-form php-mail-form" role="form" action="contactform/contactform.php" method="POST">
+                                <form className="contact-form php-mail-form" action="contactform/contactform.php" method="POST">
 
                                     <div className="form-group">
                                         <label for="contact-name">Your Name</label>

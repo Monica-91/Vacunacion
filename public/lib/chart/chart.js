@@ -1373,7 +1373,7 @@ window.Chart = function(context){
 	}
 	function getDecimalPlaces (num){
 		var numberOfDecimalPlaces;
-		if (num%1!=0){
+		if (num%1!==0){
 			return num.toString().split(".")[1].length
 		}
 		else{
