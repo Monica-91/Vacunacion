@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import {Link} from 'react-router-dom'
 
 
-export const Navbar = () => {
+export const CrearUsuarioInterno = () => {
   return (
     <>
       <div className="navbar navbar-inverse navbar-fixed-top">
