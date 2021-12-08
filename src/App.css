@@ -577,3 +577,33 @@ main {
 	margin: auto;
 	padding: 40px;
 }
+
+.DatosUsuario {
+  min-height: 100vh;
+  padding: 90px;
+}
+
+table {
+  width: 80%;
+  display: table;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: auto;
+}
+
+table, th, td {
+  border: none;
+}
+
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+  font-size: 15px;
+}
+
+.buscarnino {
+  display: flex;
+  align-items: right;
+  margin-left: 125px;
+}

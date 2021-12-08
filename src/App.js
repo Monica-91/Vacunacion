@@ -1,4 +1,4 @@
-import logo from './faviconn.jpeg';
+import logo from './faviconn.ico';
 import image from './header-bg.jpg';
 import './App.css';
 
@@ -8,12 +8,12 @@ import { About } from './pages/About';
 import { Services } from './pages/Services';
 import { Works } from './pages/Works';
 import { UsuarioseList } from './pages/UsuarioseList';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';;
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';import { DatosUsuario } from './pages/DatosUsuario';
+;
 
 function App() {
 
-  
+// const { mongoose } = require('./database');
 
   return (
      
@@ -26,6 +26,7 @@ function App() {
           <Route path="/services" element={<Services/>} />
           <Route path="/works" element={<Works/>}/>
           <Route path="/lista" element={<UsuarioseList />}/>
+          <Route path="/DatosUsuario" element={<DatosUsuario />}/>
         </Routes> 
       </BrowserRouter>
     </div>
