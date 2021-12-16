@@ -121,8 +121,8 @@ hr {
   border-color: #2d2d2d;
 }
 
-.navbar-inverse .navbar-nav>.active>a {
-  background: #ff7878
+.navbar-inverse .navbar-nav a>.active {
+  background: #ff7878;
 }
 
 .navbar-inverse .navbar-brand {
@@ -606,4 +606,8 @@ thead {
   display: flex;
   align-items: right;
   margin-left: 125px;
+}
+
+.activeMenu {
+  background-color: #ff7878;
 }

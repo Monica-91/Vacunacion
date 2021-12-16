@@ -3,16 +3,8 @@ import React, { Fragment } from "react";
 export const DatosUsuario = () => {
 
 const Lista_Usuarios = [
-    {nombre:'Jose', id:"12345", mensaje:"Ninguno", nombreAdulto:"Jose", idAdulto:"123456", celular:"3045678456", email:"josePolo@gmail.com", direccion:"Cll 00 # 00 - 00", esquema:"Ninguno"}
+    {nombre:'Andrew', id:"12345", mensaje:"Ninguno", nombreAdulto:"Jose", idAdulto:"123456", celular:"3045678456", email:"josePolo@gmail.com", direccion:"Cll 00 # 00 - 00", esquema:"Ninguno"}, {nombre:'felipe', id:"12345", mensaje:"Cualquier mensaje", nombreAdulto:"Antonio", idAdulto:"123456", celular:"3045678456", email:"antonio@gmail.com", direccion:"Cll 00 # 00 - 00", esquema:"Ninguno"}
     ]
-
-// const usuarios = Lista_Usuarios.map(p => 
-//     nombre = p.nombre,
-//     id = p.id,
-//     mensaje = p.mensaje,
-//     nombreAdulto = p.nombreAdulto
-//     );
-
   return (
     <Fragment>
       <div className="DatosUsuario">
@@ -30,34 +22,34 @@ const Lista_Usuarios = [
                     </div>
                 </form>
         </div>          
-        <div className = "row ">
+        <div className = "col s7 table-responsive">
             <div className="table-responsive">
-                <table className="table table-striped">
+                <table className="table">
                   <thead>
-                    <tr>
-                      <th>Nombre del niño</th>
-                      <th>ID del niño</th>
-                      <th>Mensaje</th>
-                      <th>Nombre adulto</th>
-                      <th>ID del adulto</th>
-                      <th>Celular</th>
-                      <th>Email</th>
-                      <th>Direccion</th>
-                      <th>Esquema</th>
+                    <tr className="panel panel-primary">
+                      <th scope="col">Nombre del niño</th>
+                      <th scope="col">ID del niño</th>
+                      <th scope="col">Mensaje</th>
+                      <th scope="col">Nombre adulto</th>
+                      <th scope="col">ID del adulto</th>
+                      <th scope="col"> Celular</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Direccion</th>
+                      <th scope="col">Esquema</th>
                     </tr>
                     
                   </thead>
                   <tbody>
-                    <tr>
-                        <td>{Lista_Usuarios.nombre}Andrew</td>
-                        <td>{Lista_Usuarios.id}1234567</td>
-                        <td>{Lista_Usuarios.mensaje}Ninguno</td>
-                        <td>{Lista_Usuarios.nombreAdulto}Jose Polo</td>
-                        <td>{Lista_Usuarios.idAdulto}12345678</td>
-                        <td>{Lista_Usuarios.celular}3024564765</td>
-                        <td>{Lista_Usuarios.email}jose@gmail.com</td>
-                        <td>{Lista_Usuarios.direccion}calle 00 # 00 - 00</td>
-                        <td>{Lista_Usuarios.esquema}Ninguno</td>
+                    <tr className="panel panel-info">
+                        <td className="table-secondary">{Lista_Usuarios.nombre}Andrew</td>
+                        <td className="table-secondary">{Lista_Usuarios.id}1234567</td>
+                        <td className="table-secondary">{Lista_Usuarios.mensaje}Ninguno</td>
+                        <td className="table-secondary">{Lista_Usuarios.nombreAdulto}Jose Polo</td>
+                        <td className="table-secondary">{Lista_Usuarios.idAdulto}12345678</td>
+                        <td className="table-secondary">{Lista_Usuarios.celular}3024564765</td>
+                        <td className="table-secondary">{Lista_Usuarios.email}jose@gmail.com</td>
+                        <td className="table-secondary">{Lista_Usuarios.direccion}calle 00 # 00 - 00</td>
+                        <td className="table-secondary">{Lista_Usuarios.esquema}Ninguno</td>
 
                     </tr>
                     </tbody>
